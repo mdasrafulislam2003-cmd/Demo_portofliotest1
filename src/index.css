@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    /* benshih.design color palette */
+    --background: 30 30% 93%;       /* #F0EBE3 warm cream */
+    --foreground: 155 38% 14%;      /* #1A3A2F dark teal */
+
+    --card: 0 0% 100%;
+    --card-foreground: 155 38% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 155 38% 14%;
+
+    --primary: 155 38% 14%;         /* #1A3A2F dark teal */
+    --primary-foreground: 30 30% 93%;
+
+    --secondary: 30 25% 88%;        /* slightly darker cream */
+    --secondary-foreground: 155 38% 14%;
+
+    --muted: 30 20% 85%;
+    --muted-foreground: 155 10% 43%; /* #6B7A72 */
+
+    --accent: 155 38% 14%;
+    --accent-foreground: 30 30% 93%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 83%;           /* #E0D9D0 */
+    --input: 30 20% 83%;
+    --ring: 155 38% 14%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --cream: 30 30% 93%;
+    --teal: 155 38% 28%;
+    --teal-dark: 155 38% 14%;
+    --coral: 11 78% 56%;            /* #E8533A */
+    --green-blob: 155 45% 33%;      /* #2D7A5F */
+    --card-bg: 0 0% 100%;
+    --dot-color: 30 20% 82%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 700;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Dotted background pattern */
+.dotted-bg {
+  background-image: radial-gradient(circle, hsl(var(--dot-color)) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 3px;
+}
+
+/* Nav active pill */
+.nav-pill-active {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-radius: 9999px;
+  padding: 6px 18px;
+}
+
+.nav-pill {
+  border-radius: 9999px;
+  padding: 6px 18px;
+  transition: background 0.2s;
+}
+
+.nav-pill:hover {
+  background: hsl(var(--secondary));
+}
